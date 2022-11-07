@@ -2,11 +2,28 @@
 {% block content %}
     <div class="form"><h1>HI, Welcome....</h1></div>
     <h3>Trending...</h3>
-    {% for post in index %}
+    {% for post in index[::-1] %}
         <div class="post">
             <h2>{{post.title}}</h2>
             <p>{{post.content}}</p>
             <p>{{post.author}}</p>
+        </div>
+        <div
+        style="
+            display: flex;
+                "
+        >
+            <a style="margin-right: 10px" href="{{ url_for('edit', id=post.id) }}">
+                Update
+            </a>
+            <form action="{{ url_for('delete', id=post.id) }}" method="post">
+                <input
+              type="submit"
+              value="Delete"
+              onclick="return confirm('You really want to delete this post?')"
+              style="background: none; border: none; cursor:pointer;"
+            />
+            </form>
         </div>
 
         <div class="datetime">

@@ -70,8 +70,45 @@ def post():
         return redirect('/')
 
     return render_template('post.html')
-#
-#
+
+
+
+# @app.route('/post_info')
+# def info():
+#     return render_template('')
+
+
+
+@app.route('/update_post/<int:id>/edit', methods=['POST', 'GET'])
+@login_required
+def edit(id):
+    update_post = Blog.query.get_or_404(id)
+    if current_user.username != update_post.author:
+        flash("You cannot edit this post", category="error")
+        return redirect(url_for("post_details", id=update_post.id))
+    if request.method == 'POST':
+        update_post.title = request.form.get('title')
+        update_post.content = request.form.get('content')
+        update_post.date_created = datetime.now()
+        db.session.commit()
+        flash("Your post has been updated successfully!", category= "success")
+
+        return redirect(url_for('index'))
+
+    return render_template('edit.html', update_post=update_post)
+
+@app.route('/delete/<int:id>', methods=["POST"])
+@login_required
+def delete(id):
+    delete_post = Blog.query.get_or_404(id)
+    if current_user.username != delete_post.author:
+        flash("You cannot delete this post", category="error")
+        return redirect(url_for("post_details", id=delete_blog.id))
+    db.session.delete(delete_post)
+    db.session.commit()
+    flash("Your post has been successfully deleted", category="error")
+    return redirect(url_for('index'))
+
 # @app.route('/update/<int:id>/', methods = ['GET', 'POST'])
 # def update(id):
 #     user_to_update = Blog.query.get_or_404(id)
