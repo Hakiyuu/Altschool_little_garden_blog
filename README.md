@@ -8,5 +8,4 @@ Your username length is not limited , you can make use of a single letter or 26l
 
 As an authenticated user , you have the ability to create post , edit post and delete post and it's only limited to authenticated users , which means , you've to be signed in before you could access the full flex of the blog site.
 
-I tried to be as creative as possible without making use of bootstrap , hence the classes are named differently, in other to create an avenue for me to design the site properties individually using css .
-I couldnt add the edit and delete due to reasons beyond my control , hope to do that soonest
+I tried to be as creative as possible without making use of bootstrap , hence the classes are named differently, in other to create an avenue for me to design the site properties individually using css . 
