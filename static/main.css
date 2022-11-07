@@ -1,0 +1,111 @@
+* {
+  font-family: Arial , Helvetica, Sans-serif;
+  box-sizing: ;
+}
+.form-group{
+    color: brown;
+
+}
+
+.form{
+    background-color: black ;
+    color: floralwhite;
+    margin: auto;
+    padding: 20px;
+
+
+}
+body {
+  margin:10px;
+  text-align: center;
+  background-color: #eee;
+  color: black;
+  font-size: 20px;
+
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: #C8A2CB;
+  min-height: 100px;
+  max-height: auto;
+}
+header >  {
+  flex: * 1 1 auto;
+}
+.nav-item,
+.logo {
+  background-image:
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+}
+
+::placeholder{
+    font-style: Normal;
+
+}
+
+.datetime{
+    color: lightblue;
+}
+
+header a {
+  margin: 40px;
+  color: floralwhite;
+  white-space: nowrap;
+}
+
+header a:hover {
+  color: lightblue;
+  transition: 1s;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: black;
+  transition: 0.3s;
+}
+.container {
+  width: 50%;
+  margin: auto;
+}
+.form-control {
+    width: 100%;
+}
+label {
+  display: block;
+  margin: 2px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.button {
+  background-color: black;
+  max-width: fit-content;
+  color: floralwhite;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color:black;
+  transition: 0.3s;
+}
+footer {
+  color: black;
+  padding: 20px;
+}
+@media (max-width: 840px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+}
